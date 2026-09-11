@@ -1,0 +1,27 @@
+[build]
+  publish = "."
+
+[build.processing]
+  skip_processing = false
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/charters"
+  to = "/week.html"
+  status = 301
+
+[[redirects]]
+  from = "/yacht-charters"
+  to = "/week.html"
+  status = 301
+
+[[redirects]]
+  from = "/plan-your-week"
+  to = "/plan.html"
+  status = 301
