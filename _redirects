@@ -1,3 +1,4 @@
+# Legacy vanity paths
 /charters /week 301
 /yacht-charters /week 301
 /bvi-yacht-charter /week 301
@@ -5,22 +6,10 @@
 /plan-your-week /plan 301
 /the-baths /baths 301
 /bvi-day-charter /days 301
-/week.html /week 301
-/days.html /days 301
-/overnight.html /overnight 301
-/experiences.html /experiences 301
-/baths.html /baths 301
-/plan.html /plan 301
-/waters.html /waters 301
-/guides.html /guides 301
-/contact.html /contact 301
-/privacy.html /privacy 301
-/thanks.html /thanks 301
-/guides/baths-timing.html /guides/baths-timing 301
-/guides/nanny-cay-week.html /guides/nanny-cay-week 301
-https://sunnyday-charters.netlify.app/* https://sunnydaycharters.com/:splat 301!
-https://www.sunnydaycharters.com/* https://sunnydaycharters.com/:splat 301!
+/weeks /week 301
+/nights /overnight 301
 
+# SEO aliases → guides
 /7-day-bvi-itinerary /guides/bvi-7-day-itinerary 301
 /bvi-itinerary /guides/bvi-7-day-itinerary 301
 /how-to-get-to-the-baths /guides/how-to-get-to-the-baths 301
@@ -30,5 +19,32 @@ https://www.sunnydaycharters.com/* https://sunnydaycharters.com/:splat 301!
 /crewed-vs-bareboat /guides/crewed-vs-bareboat-bvi 301
 /christmas-charter-bvi /guides/christmas-vs-new-year-bvi 301
 
-/weeks /week 301
-/nights /overnight 301
+# Force .html → clean URLs (301! overrides static-file shadowing)
+/index.html / 301!
+/baths.html /baths 301!
+/contact.html /contact 301!
+/days.html /days 301!
+/experiences.html /experiences 301!
+/guides/baths-before-the-day-boats.html /guides/baths-before-the-day-boats 301!
+/guides/baths-timing.html /guides/baths-timing 301!
+/guides/best-time-to-charter-bvi.html /guides/best-time-to-charter-bvi 301!
+/guides/bvi-7-day-itinerary.html /guides/bvi-7-day-itinerary 301!
+/guides/captain-only-week-includes.html /guides/captain-only-week-includes 301!
+/guides/christmas-vs-new-year-bvi.html /guides/christmas-vs-new-year-bvi 301!
+/guides/crewed-vs-bareboat-bvi.html /guides/crewed-vs-bareboat-bvi 301!
+/guides/first-night-out-of-nanny-cay.html /guides/first-night-out-of-nanny-cay 301!
+/guides/how-to-get-to-the-baths.html /guides/how-to-get-to-the-baths 301!
+/guides/nanny-cay-week.html /guides/nanny-cay-week 301!
+/guides/sailing-to-anegada.html /guides/sailing-to-anegada 301!
+/guides/white-bay-without-the-rush.html /guides/white-bay-without-the-rush 301!
+/guides.html /guides 301!
+/overnight.html /overnight 301!
+/plan.html /plan 301!
+/privacy.html /privacy 301!
+/thanks.html /thanks 301!
+/waters.html /waters 301!
+/week.html /week 301!
+
+# Canonical host
+https://sunnyday-charters.netlify.app/* https://sunnydaycharters.com/:splat 301!
+https://www.sunnydaycharters.com/* https://sunnydaycharters.com/:splat 301!

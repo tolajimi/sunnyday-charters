@@ -28,3 +28,157 @@
   from = "/plan-your-week"
   to = "/plan"
   status = 301
+
+[[redirects]]
+  from = "/weeks"
+  to = "/week"
+  status = 301
+
+[[redirects]]
+  from = "/nights"
+  to = "/overnight"
+  status = 301
+
+[[redirects]]
+  from = "/days.html"
+  to = "/days"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/week.html"
+  to = "/week"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/overnight.html"
+  to = "/overnight"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/experiences.html"
+  to = "/experiences"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/baths.html"
+  to = "/baths"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/plan.html"
+  to = "/plan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/waters.html"
+  to = "/waters"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides.html"
+  to = "/guides"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/thanks.html"
+  to = "/thanks"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/baths-before-the-day-boats.html"
+  to = "/guides/baths-before-the-day-boats"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/baths-timing.html"
+  to = "/guides/baths-timing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/best-time-to-charter-bvi.html"
+  to = "/guides/best-time-to-charter-bvi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/bvi-7-day-itinerary.html"
+  to = "/guides/bvi-7-day-itinerary"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/captain-only-week-includes.html"
+  to = "/guides/captain-only-week-includes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/christmas-vs-new-year-bvi.html"
+  to = "/guides/christmas-vs-new-year-bvi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/crewed-vs-bareboat-bvi.html"
+  to = "/guides/crewed-vs-bareboat-bvi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/first-night-out-of-nanny-cay.html"
+  to = "/guides/first-night-out-of-nanny-cay"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/how-to-get-to-the-baths.html"
+  to = "/guides/how-to-get-to-the-baths"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/nanny-cay-week.html"
+  to = "/guides/nanny-cay-week"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/sailing-to-anegada.html"
+  to = "/guides/sailing-to-anegada"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/white-bay-without-the-rush.html"
+  to = "/guides/white-bay-without-the-rush"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
