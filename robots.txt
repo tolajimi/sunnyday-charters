@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://sunnyday-charters.netlify.app/sitemap.xml
+Disallow: /thanks
+Disallow: /thanks.html
+
+Sitemap: https://sunnydaycharters.com/sitemap.xml

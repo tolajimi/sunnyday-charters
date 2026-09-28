@@ -14,6 +14,7 @@
     a.setAttribute("target", "_blank");
     a.setAttribute("rel", "noopener");
   });
+
   var toggle = document.querySelector(".menu-toggle");
   var nav = document.querySelector(".nav");
   if (toggle && nav) {
@@ -22,4 +23,22 @@
       toggle.setAttribute("aria-expanded", nav.classList.contains("open") ? "true" : "false");
     });
   }
+
+  var form = document.querySelector("form.brief");
+  if (form) {
+    form.addEventListener("submit", function () {
+      var parts = [];
+      ["dates", "nights", "pax", "waters", "style", "hull", "budget", "arrive", "mustsee"].forEach(function (name) {
+        var el = form.querySelector("[name='" + name + "']");
+        if (el && el.value) parts.push(name + ": " + el.value);
+      });
+      try { sessionStorage.setItem("sdc-brief", parts.join(" | ")); } catch (e) {}
+    });
+  }
+
+  document.querySelectorAll("[data-wa]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      if (a.getAttribute("href") && a.getAttribute("href").indexOf("wa.me") !== -1) return;
+    });
+  });
 })();
