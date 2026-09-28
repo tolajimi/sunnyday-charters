@@ -1,6 +1,9 @@
 [build]
   publish = "."
 
+[functions]
+  directory = "netlify/functions"
+
 [build.processing]
   skip_processing = false
 
@@ -13,15 +16,15 @@
 
 [[redirects]]
   from = "/charters"
-  to = "/week.html"
+  to = "/week"
   status = 301
 
 [[redirects]]
   from = "/yacht-charters"
-  to = "/week.html"
+  to = "/week"
   status = 301
 
 [[redirects]]
   from = "/plan-your-week"
-  to = "/plan.html"
+  to = "/plan"
   status = 301
