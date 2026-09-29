@@ -285,6 +285,18 @@ h1, h2, h3, .logo-title, .serif {
 .price { font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; letter-spacing: 0.04em; }
 .card-body p { color: var(--text); font-size: 0.95rem; margin-bottom: 0.75rem; font-weight: 300; }
 .card-actions { margin-top: auto; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.card-wa-secondary {
+  margin: 0.55rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 300;
+}
+.card-wa-secondary a {
+  color: var(--sand-deep);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.card-wa-secondary a:hover { color: var(--ink); }
+
 .badge {
   display: inline-block;
   font-size: 0.62rem;

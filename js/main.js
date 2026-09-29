@@ -54,3 +54,33 @@
   start.addEventListener('change', syncMin);
   syncMin();
 })();
+
+(function () {
+  var sel = document.getElementById("trip_type");
+  if (!sel) return;
+  var raw = "";
+  try { raw = (new URLSearchParams(window.location.search).get("trip") || "").toLowerCase().trim(); } catch (e) { return; }
+  if (!raw) return;
+  var map = {
+    day: "Private day (powerboat or sail)",
+    "private-day": "Private day (powerboat or sail)",
+    overnight: "Overnight (1 night)",
+    night: "Overnight (1 night)",
+    "short-week": "Short week (2–6 nights)",
+    short: "Short week (2–6 nights)",
+    week: "Full week (7 nights)",
+    "full-week": "Full week (7 nights)",
+    shared: "Shared day trip / Viator",
+    viator: "Shared day trip / Viator",
+    advise: "Not sure — advise",
+    unsure: "Not sure — advise"
+  };
+  var label = map[raw];
+  if (!label) return;
+  for (var i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].textContent === label) {
+      sel.selectedIndex = i;
+      break;
+    }
+  }
+})();
