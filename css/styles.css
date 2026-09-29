@@ -264,7 +264,6 @@ h1, h2, h3, .logo-title, .serif {
   object-fit: cover;
   object-position: center;
 }
-#charterport { scroll-margin-top: 5.5rem; }
 .exp-grid { align-items: stretch; }
 .exp-card .exp-thumb {
   display: block;
