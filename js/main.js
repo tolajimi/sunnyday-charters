@@ -42,3 +42,15 @@
     });
   });
 })();
+
+(function () {
+  var start = document.getElementById('date_start');
+  var end = document.getElementById('date_end');
+  if (!start || !end) return;
+  function syncMin() {
+    if (start.value) end.min = start.value;
+    if (end.value && start.value && end.value < start.value) end.value = start.value;
+  }
+  start.addEventListener('change', syncMin);
+  syncMin();
+})();

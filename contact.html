@@ -59,7 +59,7 @@
   <section class="page-hero inquire">
     <div class="container">
       <h1>Share the week</h1>
-      <p>Dates, party size, and preferred waters. We reply with two or three considered options.</p>
+      <p>Trip type, dates, and guest counts. We reply with two or three considered options.</p>
     </div>
   </section>
   <section class="section">
@@ -69,21 +69,34 @@
         <input type="hidden" name="form-name" value="charter-brief" />
         <p class="honeypot"><label>Leave blank <input name="bot-field" /></label></p>
         <div class="form-grid">
-          <div><label for="name">Name</label><input id="name" name="name" required /></div>
-          <div><label for="email">Email</label><input id="email" name="email" type="email" required /></div>
-          <div><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" placeholder="+1 …" /></div>
-          <div><label for="dates">Travel dates (flex?)</label><input id="dates" name="dates" placeholder="e.g. 12–19 Feb, flexible ±2 days" required /></div>
-          <div><label for="nights">Lane</label>
-            <select id="nights" name="nights" required>
+          <div><label for="name">Name</label><input id="name" name="name" required autocomplete="name" /></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" /></div>
+          <div><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" placeholder="+1 …" autocomplete="tel" /></div>
+          <div><label for="trip_type">Trip type</label>
+            <select id="trip_type" name="trip_type" required>
               <option value="">Choose</option>
-              <option>Day charter</option>
+              <option>Private day (powerboat or sail)</option>
               <option>Overnight (1 night)</option>
-              <option>2–6 nights</option>
-              <option>7 nights / one week</option>
+              <option>Short week (2–6 nights)</option>
+              <option>Full week (7 nights)</option>
+              <option>Shared day trip / Viator</option>
               <option>Not sure — advise</option>
             </select>
           </div>
-          <div><label for="pax">Party size &amp; ages</label><input id="pax" name="pax" placeholder="e.g. 6 adults, 2 kids 9 & 12" required /></div>
+          <div><label for="date_start">Start date</label><input id="date_start" name="date_start" type="date" required /></div>
+          <div><label for="date_end">End date</label><input id="date_end" name="date_end" type="date" required /></div>
+          <div><label for="dates_flex">Date flexibility</label>
+            <select id="dates_flex" name="dates_flex" required>
+              <option value="">Choose</option>
+              <option>Exact dates</option>
+              <option>±2 days</option>
+              <option>±1 week</option>
+              <option>Flexible — open to advice</option>
+            </select>
+          </div>
+          <div><label for="adults">Adults</label><input id="adults" name="adults" type="number" min="1" max="20" step="1" required placeholder="e.g. 4" /></div>
+          <div><label for="children">Children</label><input id="children" name="children" type="number" min="0" max="20" step="1" value="0" /></div>
+          <div class="full"><label for="kids_ages">Kids’ ages (if any)</label><input id="kids_ages" name="kids_ages" placeholder="e.g. 9 and 12" /></div>
           <div><label for="waters">Waters</label>
             <select id="waters" name="waters">
               <option>British Virgin Islands</option>
@@ -107,7 +120,7 @@
               <option>Power</option>
             </select>
           </div>
-          <div><label for="budget">Weekly budget band USD, excluding tip</label>
+          <div><label for="budget">Budget band USD, excluding tip</label>
             <select id="budget" name="budget">
               <option>Day / overnight — quote me</option>
               <option>Under $15,000 / week</option>
@@ -135,7 +148,7 @@
         </div>
         <p style="margin:1rem 0 .8rem;font-size:.88rem;color:#636e72">This form does not hold a yacht. We reply with two or three options. WhatsApp is fastest for a same-day answer.</p>
         <button class="btn btn-yellow" type="submit">Send brief</button>
-        <a class="btn btn-whatsapp" href="https://wa.me/13073818011?text=Hi%20Sunny%20Day%20Charters%20BVI%2C%20crewed%20week%20inquiry.%20Dates%3A%20%20Pax%3A%20%20Budget%20band%3A%20%20Sail%20or%20power%3A" target="_blank" rel="noopener">Or WhatsApp it</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/13073818011?text=Hi%20Sunny%20Day%20Charters%20BVI%2C%20charter%20inquiry.%20Trip%20type%3A%20%20Dates%3A%20%20Adults%3A%20%20Kids%3A" target="_blank" rel="noopener">Or WhatsApp it</a>
       </form>
 
       <p style="margin-top:1.4rem">WhatsApp +1 307-381-8011 · BVI +1 284-441-1733 · hello@sunnydaycharters.com</p>
@@ -171,7 +184,8 @@
   <form name="charter-brief" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
     <input type="text" name="bot-field" />
     <input name="name" /><input name="email" /><input name="whatsapp" />
-    <input name="dates" /><input name="nights" /><input name="pax" />
+    <input name="trip_type" /><input name="date_start" /><input name="date_end" /><input name="dates_flex" />
+    <input name="adults" /><input name="children" /><input name="kids_ages" />
     <input name="waters" /><input name="style" /><input name="hull" />
     <input name="budget" /><input name="arrive" /><input name="mustsee" /><input name="notes" />
   </form>
