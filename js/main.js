@@ -84,3 +84,12 @@
     }
   }
 })();
+
+(function () {
+  var box = document.getElementById("mustsee");
+  if (!box) return;
+  var yacht = "";
+  try { yacht = (new URLSearchParams(window.location.search).get("yacht") || "").trim(); } catch (e) { return; }
+  if (!yacht || box.value) return;
+  box.value = "CharterPort BVI: " + yacht;
+})();

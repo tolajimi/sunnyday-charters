@@ -52,6 +52,12 @@
   force = true
 
 [[redirects]]
+  from = "/charterport.html"
+  to = "/charterport"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/overnight.html"
   to = "/overnight"
   status = 301
