@@ -38,19 +38,47 @@
     "Zingara": ["A 2006 Silhouette 76. Five cabins, ten guests. Set up for diving, with a 19-ft tender.", "Four crew \u2014 captain, chef, stew, and dive instructor."]
   };
 
+  var reviews = {
+    "Aliz\u00e9": {
+      quote: "We would sail with Carlos and Maribel on Aliz\u00e9 again in a heartbeat.",
+      by: "Guests, June 2026",
+      href: "https://viewyacht.com/alize"
+    },
+    "Awatea": {
+      quote: "Fraser and Olivia handled our group with grace, professionalism, and Kiwi charm.",
+      by: "Guests, November 2025",
+      href: "https://viewyacht.com/awatea"
+    },
+    "Cuan Law": {
+      quote: "The crew, the accommodations, and the experience just blew us away.",
+      by: "Heather, March 2025",
+      href: "https://www.tripadvisor.com/Attraction_Review-g147355-d11760548-Reviews-Cuan_Law-Road_Town_Tortola_British_Virgin_Islands.html"
+    },
+    "Emysa": { href: "https://viewyacht.com/emysa" },
+    "Kelea": { href: "https://viewyacht.com/kelea" },
+    "Mimbaw": { href: "https://viewyacht.com/mimbaw" },
+    "Philotimo": { href: "https://viewyacht.com/philotimo" },
+    "Resilience": { href: "https://viewyacht.com/resilience" },
+    "Serena": { href: "https://viewyacht.com/serena" },
+    "Tranquility": { href: "https://viewyacht.com/tranquility" },
+    "Vision": { href: "https://viewyacht.com/vision" },
+    "Zingara": { href: "https://viewyacht.com/zingara" }
+  };
+
   var style = document.createElement("style");
-  style.textContent = ".brief-kicker{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--sand-deep);margin:.55rem 0 .15rem}.card-body p.brief{font-size:.9rem;margin-bottom:.25rem}.card-body p.price{margin-top:.55rem}";
+  style.textContent = ".brief-kicker{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--sand-deep);margin:.55rem 0 .15rem}.card-body p.brief{font-size:.9rem;margin-bottom:.25rem}.card-body p.price{margin-top:.55rem}.yacht-review{margin:.7rem 0 .35rem;padding:.7rem .8rem;background:rgba(19,36,31,.04);border-left:2px solid var(--sand)}.yacht-review blockquote{margin:0 0 .35rem;font-family:\"Cormorant Garamond\",Georgia,serif;font-style:italic;font-size:1.02rem;color:var(--ink);line-height:1.35}.yacht-review cite{display:block;font-style:normal;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.review-link{font-size:.78rem;margin:.15rem 0 .55rem}.review-link a{color:var(--sand-deep);text-decoration:underline;text-underline-offset:.16em}";
   document.head.appendChild(style);
 
   var intro = document.querySelector(".section-intro");
   if (intro) {
-    intro.textContent = "These crewed yachts sail with CharterPort from Nanny Cay. Each card is the boat, then the crew. From-rates are the published weekly start.";
+    intro.textContent = "These crewed yachts sail with CharterPort from Nanny Cay. Each card is the boat, then the crew. Guest reviews live on the yacht\u2019s own page \u2014 we link them so you can read them there.";
   }
 
   document.querySelectorAll("article.card").forEach(function (card) {
     var h3 = card.querySelector("h3");
     if (!h3) return;
-    var pair = briefs[h3.textContent.trim()];
+    var name = h3.textContent.trim();
+    var pair = briefs[name];
     if (!pair) return;
     var meta = card.querySelector("p.meta");
     var old = meta ? meta.nextElementSibling : null;
@@ -68,6 +96,29 @@
     frag.appendChild(p("brief", pair[0]));
     frag.appendChild(p("brief-kicker", "The crew"));
     frag.appendChild(p("brief", pair[1]));
+    var rev = reviews[name];
+    if (rev && rev.quote) {
+      var box = document.createElement("div");
+      box.className = "yacht-review";
+      var q = document.createElement("blockquote");
+      q.textContent = "\u201c" + rev.quote + "\u201d";
+      var cite = document.createElement("cite");
+      cite.textContent = rev.by;
+      box.appendChild(q);
+      box.appendChild(cite);
+      frag.appendChild(box);
+    }
+    if (rev && rev.href) {
+      var linkP = document.createElement("p");
+      linkP.className = "review-link";
+      var a = document.createElement("a");
+      a.href = rev.href;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = "Read guest reviews of this yacht";
+      linkP.appendChild(a);
+      frag.appendChild(linkP);
+    }
     frag.appendChild(p("price", price));
     old.parentNode.replaceChild(frag, old);
   });
