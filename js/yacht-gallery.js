@@ -16,6 +16,30 @@
   var index = 0;
   var opener = null;
   var touchX = null;
+  var lockedScroll = 0;
+
+  function lockScroll() {
+    lockedScroll = window.scrollY || document.documentElement.scrollTop || 0;
+    var gap = window.innerWidth - document.documentElement.clientWidth;
+    document.body.classList.add("lightbox-open");
+    document.body.style.top = "-" + lockedScroll + "px";
+    if (gap > 0) document.body.style.paddingRight = gap + "px";
+  }
+
+  function unlockScroll() {
+    var y = lockedScroll;
+    document.body.classList.remove("lightbox-open");
+    document.body.style.top = "";
+    document.body.style.paddingRight = "";
+    window.scrollTo(0, y);
+    // Dialog focus return can scroll the page after this event. Put the saved position back.
+    requestAnimationFrame(function () { window.scrollTo(0, y); });
+  }
+
+  function blockBackgroundScroll(event) {
+    if (!dialog.open) return;
+    event.preventDefault();
+  }
 
   function show(i) {
     if (!list.length) return;
@@ -33,7 +57,10 @@
     if (!list.length) return;
     opener = button;
     show(0);
-    if (!dialog.open) dialog.showModal();
+    if (!dialog.open) {
+      lockScroll();
+      dialog.showModal();
+    }
   }
 
   document.querySelectorAll(".photo-open").forEach(function (button) {
@@ -51,8 +78,9 @@
   });
 
   dialog.addEventListener("close", function () {
+    unlockScroll();
     img.removeAttribute("src");
-    if (opener && typeof opener.focus === "function") opener.focus();
+    if (opener && typeof opener.focus === "function") opener.focus({ preventScroll: true });
   });
 
   dialog.addEventListener("keydown", function (event) {
@@ -62,8 +90,20 @@
     } else if (event.key === "ArrowRight") {
       event.preventDefault();
       show(index + 1);
+    } else if (event.key === "PageDown" || event.key === "PageUp" || event.key === "Home" || event.key === "End" || event.key === " ") {
+      event.preventDefault();
     }
   });
+
+  document.addEventListener("keydown", function (event) {
+    if (!dialog.open) return;
+    if (event.key === "PageDown" || event.key === "PageUp" || event.key === "Home" || event.key === "End" || event.key === " ") {
+      event.preventDefault();
+    }
+  });
+
+  window.addEventListener("wheel", blockBackgroundScroll, { passive: false });
+  window.addEventListener("touchmove", blockBackgroundScroll, { passive: false });
 
   dialog.addEventListener("touchstart", function (event) {
     if (!event.changedTouches || !event.changedTouches.length) return;
