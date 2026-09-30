@@ -69,7 +69,7 @@
       <p class="section-intro">These crewed yachts sail with CharterPort from Nanny Cay. “From” is the published weekly starting rate — inquire and we’ll confirm your week before anyone holds a boat.</p>
       <div class="grid grid-3">
         <article class="card">
-          <div class="card-img"><img class="yacht-photo" src="/media/charterport/alize.jpg" alt="Alizé, Lagoon 44. Charter marketing photo from the public CharterPort listing." width="1400" height="1102" /></div>
+          <div class="card-img"><button type="button" class="photo-open" data-yacht="alize" aria-haspopup="dialog" aria-label="Photos of Alizé"><img class="yacht-photo" src="/media/charterport/alize.jpg" alt="Alizé, Lagoon 44. Charter marketing photo from the public CharterPort listing." width="1400" height="1102" /><span class="photo-cue">Photos</span></button></div>
           <div class="card-body">
             <span class="badge partner">CharterPort BVI</span>
             <h3>Alizé</h3>
@@ -190,7 +190,7 @@
           </div>
         </article>
         <article class="card">
-          <div class="card-img"><img class="yacht-photo" src="/media/charterport/liquid-sky.jpg" alt="Liquid Sky, Pajot 67. Charter marketing photo from the public CharterPort listing." width="1400" height="786" /></div>
+          <div class="card-img"><button type="button" class="photo-open" data-yacht="liquid-sky" aria-haspopup="dialog" aria-label="Photos of Liquid Sky"><img class="yacht-photo" src="/media/charterport/liquid-sky.jpg" alt="Liquid Sky, Pajot 67. Charter marketing photo from the public CharterPort listing." width="1400" height="786" /><span class="photo-cue">Photos</span></button></div>
           <div class="card-body">
             <span class="badge partner">CharterPort BVI</span>
             <h3>Liquid Sky</h3>
@@ -245,7 +245,7 @@
           </div>
         </article>
         <article class="card">
-          <div class="card-img"><img class="yacht-photo" src="/media/charterport/paloma.jpg" alt="Paloma, Lagoon 65. Charter marketing photo from the public CharterPort listing." width="1280" height="720" /></div>
+          <div class="card-img"><button type="button" class="photo-open" data-yacht="paloma" aria-haspopup="dialog" aria-label="Photos of Paloma"><img class="yacht-photo" src="/media/charterport/paloma.jpg" alt="Paloma, Lagoon 65. Charter marketing photo from the public CharterPort listing." width="1280" height="720" /><span class="photo-cue">Photos</span></button></div>
           <div class="card-body">
             <span class="badge partner">CharterPort BVI</span>
             <h3>Paloma</h3>
@@ -481,6 +481,41 @@
     <input name="waters" /><input name="style" /><input name="hull" />
     <input name="budget" /><input name="arrive" /><input name="mustsee" /><input name="notes" />
   </form>
+  <dialog class="lightbox" id="yacht-lightbox" aria-label="Yacht photos">
+    <div class="lightbox-frame">
+      <button type="button" class="lightbox-close">Close</button>
+      <p class="lightbox-title"></p>
+      <img class="lightbox-photo" alt="" />
+      <p class="lightbox-count" aria-live="polite"></p>
+      <div class="lightbox-nav">
+        <button type="button" class="lightbox-prev" aria-label="Previous photo">‹</button>
+        <button type="button" class="lightbox-next" aria-label="Next photo">›</button>
+      </div>
+    </div>
+  </dialog>
+  <script type="application/json" id="yacht-galleries">
+  {
+    "alize": [
+      {"name": "Alizé", "src": "/media/charterport/alize.jpg", "alt": "Alizé, Lagoon 44. Charter marketing photo from the public CharterPort listing."},
+      {"name": "Alizé", "src": "/media/charterport/galleries/alize-aerial.jpg", "alt": "Alizé, Lagoon 44, from above in a turquoise anchorage. Charter marketing photo from the public CharterPort listing."},
+      {"name": "Alizé", "src": "/media/charterport/galleries/alize-salon.jpg", "alt": "Alizé salon, with a dinette and galley. Charter marketing photo from the public CharterPort listing."},
+      {"name": "Alizé", "src": "/media/charterport/galleries/alize-deck.jpg", "alt": "Alizé aft deck and trampolines. Charter marketing photo from the public CharterPort listing."}
+    ],
+    "liquid-sky": [
+      {"name": "Liquid Sky", "src": "/media/charterport/liquid-sky.jpg", "alt": "Liquid Sky, Pajot 67. Charter marketing photo from the public CharterPort listing."},
+      {"name": "Liquid Sky", "src": "/media/charterport/galleries/liquid-sky-aerial.jpg", "alt": "Liquid Sky, Pajot 67, anchored over clear water. Charter marketing photo from the public CharterPort listing."},
+      {"name": "Liquid Sky", "src": "/media/charterport/galleries/liquid-sky-sail.jpg", "alt": "Liquid Sky under sail. Charter marketing photo from the public CharterPort listing."},
+      {"name": "Liquid Sky", "src": "/media/charterport/galleries/liquid-sky-deck.jpg", "alt": "Liquid Sky aft deck and flybridge. Charter marketing photo from the public CharterPort listing."}
+    ],
+    "paloma": [
+      {"name": "Paloma", "src": "/media/charterport/paloma.jpg", "alt": "Paloma, Lagoon 65. Charter marketing photo from the public CharterPort listing."},
+      {"name": "Paloma", "src": "/media/charterport/galleries/paloma-aerial.jpg", "alt": "Paloma, Lagoon 65, anchored in turquoise water. Charter marketing photo from the public CharterPort listing."},
+      {"name": "Paloma", "src": "/media/charterport/galleries/paloma-sail.jpg", "alt": "Paloma under sail. Charter marketing photo from the public CharterPort listing."},
+      {"name": "Paloma", "src": "/media/charterport/galleries/paloma-salon.jpg", "alt": "Paloma salon and galley. Charter marketing photo from the public CharterPort listing."}
+    ]
+  }
+  </script>
+  <script src="/js/yacht-gallery.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/consent.js"></script>
   <script src="/js/sa-events.js"></script>
