@@ -293,6 +293,9 @@ h1, h2, h3, .logo-title, .serif {
 .price { font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; letter-spacing: 0.04em; }
 .card-body p { color: var(--text); font-size: 0.95rem; margin-bottom: 0.75rem; font-weight: 300; }
 .card-actions { margin-top: auto; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.plan-actions { flex-direction: column; align-items: stretch; gap: 0.65rem; }
+.plan-actions .btn { width: 100%; }
+
 .card-wa-secondary {
   margin: 0.55rem 0 0;
   font-size: 0.78rem;
