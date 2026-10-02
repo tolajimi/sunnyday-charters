@@ -22,16 +22,18 @@
     if (path === "/index") path = "/";
     var items = [
       ["/", "Home"],
-      ["/week", "Weeks"],
-      ["/overnight", "Overnight"],
+      ["/week", "Multiday"],
       ["/days", "Days"],
       ["/charterport", "More yachts"],
       ["/experiences", "Experiences"],
+      ["/guides", "Journal"],
       ["/plan", "Plan"],
+      ["/waters", "Waters"],
       ["/contact", "Inquire"]
     ];
     nav.innerHTML = items.map(function (it) {
       var active = path === it[0] || (it[0] !== "/" && path.indexOf(it[0]) === 0);
+      if (it[0] === "/week" && (path === "/overnight" || path === "/nights")) active = true;
       return '<a href="' + it[0] + '"' + (active ? ' class="active"' : '') + '>' + it[1] + '</a>';
     }).join("");
   }
