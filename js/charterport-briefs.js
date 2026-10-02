@@ -39,30 +39,9 @@
   };
 
   var reviews = {
-    "Aliz\u00e9": {
-      quote: "We would sail with Carlos and Maribel on Aliz\u00e9 again in a heartbeat.",
-      by: "Guests, June 2026",
-      href: "https://viewyacht.com/alize"
-    },
-    "Awatea": {
-      quote: "Fraser and Olivia handled our group with grace, professionalism, and Kiwi charm.",
-      by: "Guests, November 2025",
-      href: "https://viewyacht.com/awatea"
-    },
     "Cuan Law": {
-      quote: "The crew, the accommodations, and the experience just blew us away.",
-      by: "Heather, March 2025",
       href: "https://www.tripadvisor.com/Attraction_Review-g147355-d11760548-Reviews-Cuan_Law-Road_Town_Tortola_British_Virgin_Islands.html"
-    },
-    "Emysa": { href: "https://viewyacht.com/emysa" },
-    "Kelea": { href: "https://viewyacht.com/kelea" },
-    "Mimbaw": { href: "https://viewyacht.com/mimbaw" },
-    "Philotimo": { href: "https://viewyacht.com/philotimo" },
-    "Resilience": { href: "https://viewyacht.com/resilience" },
-    "Serena": { href: "https://viewyacht.com/serena" },
-    "Tranquility": { href: "https://viewyacht.com/tranquility" },
-    "Vision": { href: "https://viewyacht.com/vision" },
-    "Zingara": { href: "https://viewyacht.com/zingara" }
+    }
   };
 
   var style = document.createElement("style");
@@ -71,7 +50,7 @@
 
   var intro = document.querySelector(".section-intro");
   if (intro) {
-    intro.textContent = "These crewed yachts sail with CharterPort from Nanny Cay. Each card is the boat, then the crew. Guest reviews live on the yacht\u2019s own page \u2014 we link them so you can read them there.";
+    intro.textContent = "These crewed yachts sail with CharterPort from Nanny Cay. Each card is the boat, then the crew. Where a yacht has its own review page, we link it. The other cards stay with the boat and the crew.";
   }
 
   document.querySelectorAll("article.card").forEach(function (card) {
