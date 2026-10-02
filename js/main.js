@@ -7,13 +7,18 @@
     "Fly-in (EIS / STT) or pickup:"
   ].join("\n");
   var deskUrl = "https://wa.me/13073818011?text=" + encodeURIComponent(deskBrief);
-  document.querySelectorAll("a.whatsapp-float, a.header-whatsapp").forEach(function (a) {
+  document.querySelectorAll("a.whatsapp-float").forEach(function (a) {
     if (!a.getAttribute("href") || a.getAttribute("href").indexOf("?text=") === -1) {
       a.setAttribute("href", deskUrl);
     }
     a.setAttribute("target", "_blank");
     a.setAttribute("rel", "noopener");
-    if (a.classList.contains("header-whatsapp")) a.textContent = "WhatsApp";
+  });
+  document.querySelectorAll("a.header-whatsapp").forEach(function (a) {
+    a.setAttribute("href", "/contact");
+    a.removeAttribute("target");
+    a.removeAttribute("rel");
+    a.textContent = "Inquire";
   });
 
   var toggle = document.querySelector(".menu-toggle");
