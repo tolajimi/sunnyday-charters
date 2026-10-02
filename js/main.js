@@ -30,7 +30,7 @@
       ["/", "Home"],
       ["/week", "Multiday"],
       ["/days", "Days"],
-      ["/charterport", "More yachts"],
+      ["/charterport", "Crewed yachts"],
       ["/experiences", "Experiences"],
       ["/guides", "Journal"],
       ["/plan", "Plan"],
