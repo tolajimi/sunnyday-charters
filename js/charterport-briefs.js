@@ -84,7 +84,8 @@
     var old = meta ? meta.nextElementSibling : null;
     if (!old || old.tagName !== "P") return;
     if (old.classList.contains("brief") || old.classList.contains("brief-kicker")) return;
-    var price = (old.textContent.match(/From \$[\\d,]+ \/ week/) || ["Rate on request"])[0];
+    var found = old.textContent.match(/From \$[\d,]+/);
+    var price = found ? found[0] + " / week" : "Rate on request";
     function p(cls, text) {
       var el = document.createElement("p");
       el.className = cls;
