@@ -607,11 +607,9 @@ textarea { min-height: 110px; resize: vertical; }
 
 
 .page-hero.overnight,
-.page-hero.weeks,
-.page-hero.baths { position: relative; overflow: hidden; }
+.page-hero.weeks { position: relative; overflow: hidden; }
 .page-hero.overnight video.hero-video,
-.page-hero.weeks video.hero-video,
-.page-hero.baths video.hero-video {
+.page-hero.weeks video.hero-video {
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; z-index: 0;
 }
@@ -636,15 +634,42 @@ textarea { min-height: 110px; resize: vertical; }
   text-shadow: 0 1px 2px rgba(0,0,0,.55), 0 8px 28px rgba(0,0,0,.45);
 }
 .page-hero.overnight video.hero-video { object-position: 50% 72%; }
-.page-hero.baths video.hero-video { object-position: 50% 62%; }
-.page-hero.baths::after {
-  z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(8,16,14,.28) 0%,
-    rgba(8,16,14,.18) 42%,
-    rgba(8,16,14,.78) 100%
-  );
+.page-hero.overnight {
+  min-height: 72vh;
+  display: flex;
+  align-items: flex-end;
+}
+/* Source is a 540×960 phone clip. Keep the portrait frame and never
+   paint it wider or taller than those pixels. */
+.page-hero.baths {
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: end;
+  column-gap: clamp(1.25rem, 3vw, 3rem);
+  row-gap: 1.15rem;
+  padding: 1.5rem max(1.25rem, calc((100% - 1180px) / 2)) 1.75rem;
+  background: var(--ink);
+}
+.page-hero.baths::after { content: none; }
+.page-hero.baths video.hero-video {
+  position: relative;
+  inset: auto;
+  z-index: 0;
+  width: min(540px, calc(min(78vh, 960px) * 540 / 960));
+  height: auto;
+  aspect-ratio: 540 / 960;
+  object-fit: contain;
+  justify-self: start;
+  background: #0c1814;
+}
+.page-hero.baths .container {
+  width: min(40rem, 100%);
+  max-width: none;
+  margin: 0;
+  padding-bottom: 0.35rem;
 }
 .page-hero.baths h1,
 .page-hero.baths p {
@@ -652,11 +677,20 @@ textarea { min-height: 110px; resize: vertical; }
   text-shadow: 0 1px 2px rgba(0,0,0,.55), 0 8px 28px rgba(0,0,0,.45);
 }
 .page-hero.baths .section-kicker { color: #fff; }
-.page-hero.overnight,
-.page-hero.baths {
-  min-height: 72vh;
-  display: flex;
-  align-items: flex-end;
+@media (max-width: 800px) {
+  .page-hero.baths {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 0 0 1.5rem;
+  }
+  .page-hero.baths video.hero-video {
+    width: min(540px, 100%, calc(min(72vh, 960px) * 540 / 960));
+    justify-self: center;
+  }
+  .page-hero.baths .container {
+    width: min(40rem, 90%);
+    margin-inline: auto;
+  }
 }
 .page-hero.overnight .container,
 .page-hero.weeks .container,
