@@ -13,6 +13,7 @@
     }
     a.setAttribute("target", "_blank");
     a.setAttribute("rel", "noopener");
+    if (a.classList.contains("header-whatsapp")) a.textContent = "WhatsApp";
   });
 
   var toggle = document.querySelector(".menu-toggle");
