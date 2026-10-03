@@ -87,7 +87,7 @@
       });
       if (note) {
         note.textContent =
-          "Viator experiences. A referral — not a Sunny Day boat, and not the Hilux.";
+          "Viator experiences. A referral — not a Sunny Day boat, and not the 4×4 SUV tour.";
       }
     })
     .catch(function () {
@@ -111,7 +111,7 @@
       blob.indexOf("beach day") !== -1 ||
       blob.indexOf("tortola beach") !== -1
     ) {
-      return "A referral, not our Hilux.";
+      return "A referral, not our 4×4 SUV tour.";
     }
     return "";
   }
