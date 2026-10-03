@@ -1,10 +1,12 @@
 # Sunny Day Charters — Grok project notes
 
-Source-of-truth note for the Grok project at https://grok.com/project/ca1ee65a-8917-487a-8be9-b64851eb4563, as of about 2026-09-30. Copy or link this file into that project. It covers recent work on sunnydaycharters.com (Netlify, GitHub `tolajimi/sunnyday-charters`).
+Source-of-truth note for the Grok project at https://grok.com/project/ca1ee65a-8917-487a-8be9-b64851eb4563. It covers sunnydaycharters.com (Netlify, GitHub `tolajimi/sunnyday-charters`). Checked against the live site and `main` on 2026-10-03.
 
 James Woods is the ultimate override. If a later instruction from James conflicts with this note, follow James.
 
 Work still marked in progress below is not finished. Do not treat it as done, and do not invent a completion.
+
+This file is an internal note. CharterPort and Horizon are partnership names for the desk. They are not guest-facing words. Do not put CharterPort, Horizon, or Island Time into copy a guest reads.
 
 ## Brand split
 
@@ -14,27 +16,35 @@ Work still marked in progress below is not finished. Do not treat it as done, an
 
 ## Site / conversion work (late Sep 2026)
 
-**What.** `.html` URLs are forced to clean paths. The `/weeks` and `/nights` 404s are fixed. Sailing-trip photos were pulled into site assets, web-optimized, placed, then deduped so a repeat appears only on the same named card or page. The contact inquiry form now collects trip type, dates, and guests. Netlify Forms emails those inquiries to hello@sunnydaycharters.com. A twice-daily spam triage marks legitimate submissions as ham. On yacht cards, the primary action is Inquire and goes to `/contact`; WhatsApp is the secondary action and sits under the cards. Charters links the 4×4 product to Adventures Wix booking. Adventures links back to Charters on Wix. Offer schema is on `/days` and `/overnight`. Google Search Console indexing was pushed. There is standing permission to use Request indexing on money pages, especially `/contact`. Findability and traffic are watched in Simple Analytics and Search Console.
+**What.** `.html` URLs are forced to clean paths. The `/weeks` and `/nights` 404s are fixed. Sailing-trip photos were pulled into site assets, web-optimized, placed, then deduped so a repeat appears only on the same named card or page. The contact inquiry form now collects trip type, dates, and guests. Netlify Forms emails those inquiries to hello@sunnydaycharters.com. A twice-daily spam triage marks legitimate submissions as ham. On yacht cards, the primary action is Inquire and goes to `/contact`; WhatsApp is the secondary action and sits under the cards. Charters links the 4×4 SUV tour to Adventures Wix booking. Adventures links back to Charters on Wix. Offer schema is on `/days` and `/overnight`. Google Search Console indexing was pushed. There is standing permission to use Request indexing on money pages, especially `/contact`. Findability and traffic are watched in Simple Analytics and Search Console.
 
-**Why.** Clean paths and the weeks/nights fixes stop guests and Google from landing on dead URLs. Deduped photos keep each named trip visually distinct. The richer form gives the desk enough to reply, and the ham routine keeps real inquiries out of the spam pile. Inquire-first cards send charter intent into `/contact` instead of straight to chat. The 4×4 mesh sends land trips to the brand that books them, and sends sailing intent back here. Schema and indexing requests exist so the money pages can be found. Analytics and Search Console are how that findability is judged.
+**Why.** Clean paths and the weeks/nights fixes stop guests and Google from landing on dead URLs. Deduped photos keep each named trip visually distinct. The richer form gives the desk enough to reply, and the ham routine keeps real inquiries out of the spam pile. Inquire-first cards send charter intent into `/contact` instead of straight to chat. The 4×4 link sends land trips to the brand that books them, and sends sailing intent back here. Schema and indexing requests exist so the money pages can be found. Analytics and Search Console are how that findability is judged.
 
-## Adventures 4×4 pricing (for cross-links; Adventures owns booking)
+## Private day rates (October 2026, on /days)
 
-**What.** Adults over 12 are $300 USD. Children 12 and under are $200. Maximum 4 guests per Hilux. Parties of 5–8 need two vehicles. Parties of 9 or more are inquire-only on a safari bus and are not bookable online.
+**What.** Live private day prices on `/days`: Couples Special is $995 (4 hours, Contender 21, 2–3 plus captain). Essentials is $1,250 (4 hours, Cobia 239, up to 6 plus captain). Contender 21 is $1,150 for 6 hours and $1,400 for 8 hours (up to 3 plus captain). Cobia 239 is $1,650 for 6 hours and $1,900 for 8 hours. Cobia 279 is $1,850 for 6 hours and $2,100 for 8 hours. Couples Special and Essentials are marked as operated by Adventures. The 4×4 SUV tour on the same page is adult $300 and child $200 (12 and under).
 
-**Why.** Charters only cross-links this product. Adventures owns the booking on Wix. These figures are here so Charters copy stays accurate and does not imply an online checkout this site does not run.
+**Why.** `/days` is the rate card. These are the October 2026 figures guests see. Adventures books the private boat days and the land day. Charters must quote these numbers, not an older day price.
+
+## Adventures 4×4 SUV tour (for cross-links; Adventures owns booking)
+
+**What.** The land day is a 4×4 SUV tour. Adults are $300 USD. Children 12 and under are $200. One vehicle holds 1–4 guests. Parties of 5–8 need two vehicles. Parties of 9 or more are inquire-only on a safari bus and are not bookable online.
+
+**Why.** Charters only cross-links this product. Adventures owns the booking on Wix. The guest name is 4×4 SUV tour. These figures keep Charters copy aligned with that booking page.
 
 ## CharterPort partnership
 
-**What.** The partner is Dick Schoonover, CharterPort BVI, Nanny Cay. Broker commission is confirmed at 15%. The live page is `/charterport`, framed as “More yachts” and “More yachts for your week.” A quiet note says the boats are through CharterPort and are not owned by Sunny Day. About 34 partner yachts each have a click-to-lightbox gallery of 5 photos, a Photos cue, and scroll lock while the lightbox is open. There is no shared availability API. Check the public sites (charterportbvi.com, Charter Index, CYA), then option the boat through Dick. Holds run about two weeks, with a 48-hour challenge. A paid MLS (Charter Index or CYA) is optional later and is not required to work with Dick. A Dick onboarding email was drafted and is held for James to edit. It has not been sent. Asking again about paperwork or rate updates was judged redundant. In progress, and not finished: boat vibe profiles (current crew, sample menu, water toys), now that partnership permission exists.
+**What.** The partner is Dick Schoonover, CharterPort BVI, Nanny Cay. Broker commission is confirmed at 15%. Guests see this fleet as Crewed yachts. The page heading is “Crewed yachts, with a captain and chef.” The path is still `/charterport`, so older links keep working. Guest copy on that page does not name CharterPort. About 34 partner yachts each have a click-to-lightbox gallery of 5 photos, a Photos cue, and scroll lock while the lightbox is open. Each card shows a published week rate as “from,” and the guest is told to inquire so the dates can be confirmed before a boat is held. There is no shared availability API. Check the public sites (charterportbvi.com, Charter Index, CYA), then option the boat through Dick. Holds run about two weeks, with a 48-hour challenge. A paid MLS (Charter Index or CYA) is optional later and is not required to work with Dick. A Dick onboarding email was drafted and is held for James to edit. It has not been sent. Asking again about paperwork or rate updates was judged redundant. In progress, and not finished: boat vibe profiles (current crew, sample menu, water toys), now that partnership permission exists.
 
-**Why.** The page widens the week fleet without claiming ownership. The quiet note keeps that honest for guests. Galleries let someone see a boat before they inquire. Availability stays a manual check because no API is shared, and the hold and challenge rules are Dick’s. The onboarding email stays unsent until James edits it. Vibe profiles are the next content step on boats already permitted for the page.
+As of this check, home, week, overnight, and most navigation links still say “More yachts,” and home, week, and overnight still name CharterPort in the body. Those lines are still live. They are not the fleet-page title.
+
+**Why.** The guest label is Crewed yachts so the fleet page reads as a Sunny Day offer. The path `/charterport` keeps old links alive. CharterPort stays the internal name for who Dick is, the 15% commission, and how availability is checked. Galleries and “from” week rates let a guest see a boat and a starting price before they inquire. Availability stays a manual check because no API is shared, and the hold and challenge rules are Dick’s. The onboarding email stays unsent until James edits it. Vibe profiles are the next content step, not a completed feature.
 
 ## Horizon trip boats (Sunny Day captains)
 
-**What.** Week, overnight, and day cards name boats as model plus year: Lagoon 51 2025, Nautitech 46 Fly 2023, Lagoon 46 2024, Elba 45 2022, Lagoon 40 2024, Nautitech 44 Open 2024, Lagoon 42 2020, FP 44 2026. In progress: click-to-gallery using Horizon media only, matched to the exact boat, with no cross-boat photo mixes. Prefer interiors (saloon, galley, cabin, head). Use boat links from this Grok project when they are available. Horizon contacts James already knows: Courtney Frett, Rhys Warwick, and Kayleigh Starkey. Any follow-up is a continuation, not a cold introduction.
+**What.** Horizon is an internal name. Guest cards do not say Horizon. Week, overnight, and day cards name boats as model plus year: Lagoon 51 2025, Nautitech 46 Fly 2023, Lagoon 46 2024, Fountaine Pajot Elba 45 2022, Lagoon 40 2024, Nautitech 44 Open 2024, Lagoon 42 2020, Fountaine Pajot 44 2026. In progress, and not finished: click-to-gallery using Horizon media only, matched to the exact boat, with no cross-boat photo mixes. Prefer interiors (saloon, galley, cabin, head). Use boat links from this Grok project when they are available. Horizon contacts James already knows: Courtney Frett, Rhys Warwick, and Kayleigh Starkey. Any follow-up is a continuation, not a cold introduction.
 
-**Why.** Model and year tie each card to a real boat. A gallery that mixes boats shows the guest the wrong interior. Interior shots answer what people ask before they book. The three Horizon contacts are existing relationships, so the tone stays familiar.
+**Why.** Model and year are what a guest should see, and they tie each card to a real boat. A gallery that mixes boats shows the wrong interior. Interior shots answer what people ask before they book. The three Horizon contacts are existing relationships, so the tone stays familiar.
 
 ## Other partner notes
 
@@ -44,6 +54,6 @@ Work still marked in progress below is not finished. Do not treat it as done, an
 
 ## Tone / copy rules
 
-**What.** Partner tone is soft and warm. Warmer guest-facing copy is approved on the CharterPort fleet page. Outbound email opens with “Good morning” or “Good afternoon” by the recipient’s local time, uses “Please,” and ends with “Thank you.”
+**What.** Partner tone is soft and warm. Guest copy on the crewed yachts page stays warm and does not name CharterPort or Horizon. Outbound email opens with “Good morning” or “Good afternoon” by the recipient’s local time, uses “Please,” and ends with “Thank you.”
 
-**Why.** Dick, Horizon, and Els are relationship-led. The CharterPort page copy was deliberately warmed for guests and should stay that way. The greeting, “Please,” and “Thank you” are the house style for outbound notes.
+**Why.** Dick, the Horizon contacts, and Els are relationship-led, and those names stay in this note. The greeting, “Please,” and “Thank you” are the house style for outbound notes.
