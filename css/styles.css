@@ -605,6 +605,19 @@ textarea { min-height: 110px; resize: vertical; }
   .hero { min-height: 78vh; align-items: flex-end; }
 }
 
+/* Phone: stacked cards and sections were sitting a full section-pad apart. */
+@media (max-width: 700px) {
+  .section { padding: 3.25rem 0; }
+  .section-intro { margin-bottom: 1.5rem; }
+  .grid { gap: 0.85rem; }
+  .split,
+  .split.reverse { gap: 1.75rem; }
+  .exp-grid.grid-3 { gap: 0.55rem; }
+  .page-hero { padding-bottom: 2.6rem; }
+  .footer { padding-top: 2.4rem; }
+  .footer-grid { gap: 1.15rem; margin-bottom: 1.35rem; }
+}
+
 
 .page-hero.overnight,
 .page-hero.weeks { position: relative; overflow: hidden; }
