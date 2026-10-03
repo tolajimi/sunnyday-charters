@@ -216,6 +216,24 @@ h1, h2, h3, .logo-title, .serif {
 
 .section { padding: 5.2rem 0; }
 .section.alt { background: var(--paper); }
+.elsewhere-strip {
+  padding: 1.35rem 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.elsewhere-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem 1.5rem;
+}
+.elsewhere-strip-inner p {
+  margin: 0;
+  max-width: 40rem;
+  font-weight: 300;
+  color: var(--text);
+}
 .section-kicker {
   text-align: center;
   letter-spacing: 0.26em;
