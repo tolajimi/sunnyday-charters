@@ -1,22 +1,48 @@
 (function () {
   var deskBrief = [
     "Hi Sunny Day Charters BVI",
-    "I want: Hilux land day / private boat / overnight / week / not sure",
+    "I want: our captain week / overnight / private day / a crewed house / not sure",
     "Dates:",
     "Guests + ages:",
-    "Pickup or fly-in (EIS / STT / villa):"
+    "Fly-in (EIS / STT) or pickup:"
   ].join("\n");
   var deskUrl = "https://wa.me/13073818011?text=" + encodeURIComponent(deskBrief);
-  document.querySelectorAll("a.whatsapp-float, a.header-whatsapp").forEach(function (a) {
+  document.querySelectorAll("a.whatsapp-float").forEach(function (a) {
     if (!a.getAttribute("href") || a.getAttribute("href").indexOf("?text=") === -1) {
       a.setAttribute("href", deskUrl);
     }
     a.setAttribute("target", "_blank");
     a.setAttribute("rel", "noopener");
   });
+  document.querySelectorAll("a.header-whatsapp").forEach(function (a) {
+    a.setAttribute("href", "/contact");
+    a.removeAttribute("target");
+    a.removeAttribute("rel");
+    a.textContent = "Inquire";
+  });
 
   var toggle = document.querySelector(".menu-toggle");
   var nav = document.querySelector(".nav");
+  if (nav) {
+    var path = (location.pathname || "/").replace(/\.html$/, "") || "/";
+    if (path === "/index") path = "/";
+    var items = [
+      ["/", "Home"],
+      ["/week", "Multiday"],
+      ["/days", "Days"],
+      ["/charterport", "Crewed yachts"],
+      ["/experiences", "Experiences"],
+      ["/guides", "Journal"],
+      ["/plan", "Plan"],
+      ["/waters", "Waters"],
+      ["/contact", "Inquire"]
+    ];
+    nav.innerHTML = items.map(function (it) {
+      var active = path === it[0] || (it[0] !== "/" && path.indexOf(it[0]) === 0);
+      if (it[0] === "/week" && (path === "/overnight" || path === "/nights")) active = true;
+      return '<a href="' + it[0] + '"' + (active ? ' class="active"' : '') + '>' + it[1] + '</a>';
+    }).join("");
+  }
   if (toggle && nav) {
     toggle.addEventListener("click", function () {
       nav.classList.toggle("open");
@@ -35,12 +61,6 @@
       try { sessionStorage.setItem("sdc-brief", parts.join(" | ")); } catch (e) {}
     });
   }
-
-  document.querySelectorAll("[data-wa]").forEach(function (a) {
-    a.addEventListener("click", function () {
-      if (a.getAttribute("href") && a.getAttribute("href").indexOf("wa.me") !== -1) return;
-    });
-  });
 })();
 
 (function () {

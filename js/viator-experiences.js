@@ -49,14 +49,15 @@
             Number(p.price).toLocaleString() +
             "</p>"
           : "";
+        var referral = referralLine(p);
         var rating =
           p.rating && p.reviewCount
-            ? "<p class=\"meta\">" +
+            ? "<p class=\"meta\">Viator experience · " +
               Number(p.rating).toFixed(1) +
               " · " +
               p.reviewCount +
               " reviews</p>"
-            : "<p class=\"meta\">Viator day trip</p>";
+            : "<p class=\"meta\">Viator experience</p>";
         var href = p.url || "/contact";
         var cta = p.url ? "View on Viator" : "Ask a question";
         var title = String(p.title || "Day trip");
@@ -67,12 +68,13 @@
           "\" alt=\"" +
           escapeHtml(title) +
           "\" width=\"674\" height=\"446\" loading=\"lazy\" /></div><div class=\"card-body\">" +
-          "<span class=\"badge partner\">Day trip</span>" +
+          "<span class=\"badge partner\">Viator</span>" +
           "<h3>" +
           escapeHtml(title) +
           "</h3>" +
           rating +
           "<p class=\"blurb\">" +
+          escapeHtml(referral ? referral + " " : "") +
           escapeHtml(p.description || "") +
           "</p>" +
           price +
@@ -85,15 +87,34 @@
       });
       if (note) {
         note.textContent =
-          "These days are booked through Viator. If you spent the day with Sunny Day, we welcome that review.";
+          "Viator experiences. A referral — not a Sunny Day boat, and not the 4×4 SUV tour.";
       }
     })
     .catch(function () {
       if (note) {
         note.textContent =
-          "Listings are unavailable just now. WhatsApp us and we will arrange the day.";
+          "Live listings are unavailable just now. The cards below are Viator referrals, not trips Sunny Day operates.";
       }
     });
+
+  function referralLine(p) {
+    var blob = ((p.title || "") + " " + (p.description || "")).toLowerCase();
+    if (
+      blob.indexOf("daysail") !== -1 ||
+      blob.indexOf("day sail") !== -1 ||
+      blob.indexOf("anne bonny") !== -1
+    ) {
+      return "A referral, not our boat.";
+    }
+    if (
+      blob.indexOf("beach tour") !== -1 ||
+      blob.indexOf("beach day") !== -1 ||
+      blob.indexOf("tortola beach") !== -1
+    ) {
+      return "A referral, not our 4×4 SUV tour.";
+    }
+    return "";
+  }
 
   function escapeHtml(s) {
     return String(s)

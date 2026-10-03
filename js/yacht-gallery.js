@@ -32,7 +32,6 @@
     document.body.style.top = "";
     document.body.style.paddingRight = "";
     window.scrollTo(0, y);
-    // Dialog focus return can scroll the page after this event. Put the saved position back.
     requestAnimationFrame(function () { window.scrollTo(0, y); });
   }
 
@@ -117,4 +116,11 @@
     if (Math.abs(dx) < 48) return;
     show(dx > 0 ? index - 1 : index + 1);
   }, { passive: true });
+})();
+
+(function () {
+  if (location.pathname.replace(/\.html$/, "") !== "/charterport") return;
+  var s = document.createElement("script");
+  s.src = "/js/charterport-briefs.js";
+  document.head.appendChild(s);
 })();
